@@ -8,3 +8,9 @@ class Book(models.model):
     year = models.IntegerField()
     description = models.TextField(blank = True)
     status = models.CharField(choices = STATUS, max_length = 1)
+    reviews = models.OneToManyField('BookReview', blank=True)
+
+class BookReview(models.model):
+    source = models.CharField(max_length=100)
+    rating = models.IntegerField()
+    comments = models.TextField(blank = True)
