@@ -11,6 +11,8 @@ class Book(models.model):
     reviews = models.OneToManyField('BookReview', blank=True)
 
 class BookReview(models.model):
+    REVIEW_TYPE = [(1, 'Member'), (2, 'Online')]
     source = models.CharField(max_length=100)
     rating = models.IntegerField()
     comments = models.TextField(blank = True)
+    review_type = models.CharField(choices = REVIEW_TYPE, max_length = 1)
