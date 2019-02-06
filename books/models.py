@@ -15,4 +15,4 @@ class Review(models.Model):
     rating = models.IntegerField()
     comments = models.TextField(blank = True)
     review_type = models.CharField(choices = REVIEW_TYPE, max_length = 1)
-    book = models.ForeignKey(Book)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
