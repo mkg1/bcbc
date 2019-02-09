@@ -4,4 +4,4 @@ from.models import Book
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'author', 'description']
